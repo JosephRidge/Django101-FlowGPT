@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def secondHome(request):
-    return HttpResponse("Welcome to my Second Home!")
+    return  render(request, 'secondApp/home.html')

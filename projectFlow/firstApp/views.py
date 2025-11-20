@@ -3,4 +3,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse("Welcome HOME!")
+    return render(request, 'firstApp/home.html')
+
+def market(request):
+    return render(request, 'firstApp/market.html')
