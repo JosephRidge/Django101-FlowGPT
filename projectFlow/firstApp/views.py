@@ -42,3 +42,22 @@ def readOneMountain(request, pk):
     mountain = Mountain.objects.get(id = pk)
     context ={"mountain":mountain}
     return render(request,"firstApp/mountain.html", context)
+
+def updateMountain(request,pk):
+    """
+    - fetch the mountain details
+    - create the mountain form instance
+    - pass the instance of the mountain to the mountain form
+    - update mountain
+    """
+    mountain = Mountain.objects.get(id = pk )
+    form = MountainForm(instance = mountain)
+
+    if request.method == "POST":
+        form = MountainForm(request.POST, instance= mountain)
+        if form.is_valid():
+            form.save()
+            return redirect("readMountains")
+
+    context = {"form": form}
+    return render(request, "firstApp/form.html", context)
