@@ -1,13 +1,17 @@
 from django.db import models
 
-# Create your models here.
-class Bottle(models.Model):
+class Mountain(models.Model):
     name = models.CharField(max_length=200)
-    size = models.FloatField()
-    color = models.CharField(max_length=100)
-    price = models.FloatField()
-    created_at = models.DateField(auto_now_add = True)
+    description = models.CharField(max_length=200)
+    location = models.CharField(max_length=200)
+    image = models.CharField(max_length=255)
+    created_at = models.DateField(auto_now_add=True) 
     updated_at = models.DateField(auto_now=True)
 
+    # 
     def __str__(self):
-        return f"Name: {self.name} || Color: {self.color} "
+        return self.name
+        
+
+
+

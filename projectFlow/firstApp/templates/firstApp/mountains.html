@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1 class="display-5">Top 10 Mountains in the World </h1>
+<hr>
+<div>
+    {% for mountain in mountains %}
+    <img src="{{mountain.image}}" alt="image of mountain" class="my-2 rounded ">
+    <div class="display-6 mb-3 mt-1">{{mountain.name}}</div> <span class= "fs-6 fw-light text-secondary">located at</span> <span class="badge bg-info text-dark px-3 py-2"> {{mountain.location}}</span>
+    <p class="lead my-2">{{mountain.description }}</p>
+   
+    <hr>
+    {% endfor %}
+</div>
+
+
+{% endblock%}

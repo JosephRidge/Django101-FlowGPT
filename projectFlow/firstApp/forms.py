@@ -1,7 +1,13 @@
-from django.forms import ModelForm
-from .models import Bottle
+"""
+- import ModelForm
+- import the Model
+- create ModelForm instance
+"""
 
-class BottleForm(ModelForm):
+from django.forms import ModelForm
+from .models import Mountain
+
+class MountainForm(ModelForm):
     class Meta: 
-        model = Bottle
-        fields = '__all__' 
+        model = Mountain
+        fields = '__all__'

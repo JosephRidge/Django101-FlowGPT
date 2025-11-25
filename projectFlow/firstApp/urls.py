@@ -1,11 +1,14 @@
 from django.urls import path
 from . import views
 
+"""
+    OBJECTIVE: 
+    Create a CRUD application, Create..Read..Update..Delete
+    - target will be Mountain table  
+"""
 urlpatterns = [ 
     path('', views.home),
-    path('market', views.market), 
-    
-    # CRUD Operations
-    path('create-bottle', views.createBottle, name='createBottle'),
-    path('bottles', views.fetchBottles, name='fetchBottles')
-]
+    path('market', views.market),  
+    path('create-mountain', views.createMountain, name="createMountain"),
+    path('read-mountains', views.readMountains, name="readMountains"),
+    ]
