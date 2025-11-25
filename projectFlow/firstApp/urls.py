@@ -11,4 +11,5 @@ urlpatterns = [
     path('market', views.market),  
     path('create-mountain', views.createMountain, name="createMountain"),
     path('read-mountains', views.readMountains, name="readMountains"),
+    path('read-one-mountain/<str:pk>', views.readOneMountain, name="readOneMountain"),
     ]

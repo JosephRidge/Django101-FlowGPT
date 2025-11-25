@@ -27,6 +27,7 @@ def createMountain(request):
     return render(request, "firstApp/form.html", context)
 
 def readMountains(request):
+
     """
     - fetch data from DB
     - save data in context
@@ -36,3 +37,8 @@ def readMountains(request):
     mountains = Mountain.objects.all()
     context ={"mountains":mountains}
     return render(request, "firstApp/mountains.html", context)
+
+def readOneMountain(request, pk):
+    mountain = Mountain.objects.get(id = pk)
+    context ={"mountain":mountain}
+    return render(request,"firstApp/mountain.html", context)
