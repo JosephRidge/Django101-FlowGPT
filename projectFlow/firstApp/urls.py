@@ -13,4 +13,5 @@ urlpatterns = [
     path('read-mountains', views.readMountains, name='readMountains'),
     path('read-one-mountain/<str:pk>', views.readOneMountain, name='readOneMountain'),
     path('update-one-mountain/<str:pk>', views.updateMountain, name='updateMountain'),
+    path('delete-mountain/<str:pk>', views.deleteMountain, name='deleteMountain'),
     ]

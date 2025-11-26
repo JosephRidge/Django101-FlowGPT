@@ -61,3 +61,12 @@ def updateMountain(request,pk):
 
     context = {"form": form}
     return render(request, "firstApp/form.html", context)
+
+def deleteMountain(request, pk):
+    mountain = Mountain.objects.get(id = pk)
+
+    if request.method == "POST":
+        mountain.delete()
+        return redirect("readMountains")
+    context ={"mountain":mountain}
+    return render(request, "firstApp/delete.html", context)

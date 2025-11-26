@@ -2,14 +2,16 @@
 
 {% block content %}
 <h1 class="display-5">Top 10 Mountains in the World </h1>
+<a href="{% url 'createMountain' %}" class="text-decoration-none bg-dark text-light py-2 my-2 px-3 rounded">add mountain</a>
 <hr>
 <div>
     {% for mountain in mountains %}
     <img src="{{mountain.image}}" alt="image of mountain" class="my-2 rounded ">
     <div class="display-6 mb-3 mt-1">{{mountain.name}}</div> <span class= "fs-6 fw-light text-secondary">located at</span> <span class="badge bg-info text-dark px-3 py-2"> {{mountain.location}}</span>
     <p class="lead my-2">{{mountain.description }}</p>
-    <a href="{% url 'readOneMountain' mountain.id  %}" class="text-decoration-none text-dark badge bg-info">see more </a>
-    <a href="{% url 'updateMountain' mountain.id  %}" class="text-decoration-none  text-dark badge bg-warning">update </a>
+    <a href="{% url 'readOneMountain' mountain.id  %}" class="text-decoration-none px-3 py-1 text-dark badge bg-info">see more </a>
+    <a href="{% url 'updateMountain' mountain.id  %}" class="text-decoration-none  px-3 py-1  text-dark badge bg-warning">update </a>
+    <a href="{% url 'deleteMountain' mountain.id  %}" class="text-decoration-none  px-3 py-1  text-light badge bg-danger">delete </a>
    
     <hr>
     {% endfor %}
