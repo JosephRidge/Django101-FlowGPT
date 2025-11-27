@@ -6,7 +6,7 @@ from .models import Mountain
 # Create your views here.
 
 def home(request):
-    return render(request, 'firstApp/home.html')
+    return render(request, 'index.html')
 
 def market(request):
     return render(request, 'firstApp/market.html')

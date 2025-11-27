@@ -1,20 +1,28 @@
-{% extends 'main.html' %}
+{% extends 'index.html' %}
 
+{% load static %}
 {% block content %}
 <h1 class="display-5">Top 10 Mountains in the World </h1>
-<a href="{% url 'createMountain' %}" class="text-decoration-none bg-dark text-light py-2 my-2 px-3 rounded">add mountain</a>
+<!-- <a href="{% url 'createMountain' %}" class="text-decoration-none bg-dark text-light py-2 my-2 px-3 rounded">add mountain</a> -->
 <hr>
-<div>
+<div class="product-section">
+    <div class="container">
+        <div class="row">
     {% for mountain in mountains %}
-    <img src="{{mountain.image}}" alt="image of mountain" class="my-2 rounded ">
-    <div class="display-6 mb-3 mt-1">{{mountain.name}}</div> <span class= "fs-6 fw-light text-secondary">located at</span> <span class="badge bg-info text-dark px-3 py-2"> {{mountain.location}}</span>
-    <p class="lead my-2">{{mountain.description }}</p>
-    <a href="{% url 'readOneMountain' mountain.id  %}" class="text-decoration-none px-3 py-1 text-dark badge bg-info">see more </a>
-    <a href="{% url 'updateMountain' mountain.id  %}" class="text-decoration-none  px-3 py-1  text-dark badge bg-warning">update </a>
-    <a href="{% url 'deleteMountain' mountain.id  %}" class="text-decoration-none  px-3 py-1  text-light badge bg-danger">delete </a>
-   
-    <hr>
+    <div class="col-12 col-md-4 col-lg-3 mb-5 mb-md-0">
+        <a class="product-item" href="cart.html">
+            <img src="{{mountain.image}}" class="img-fluid product-thumbnail">
+            <h3 class="product-title">{{mountain.name}}</h3>
+            <strong class="product-price">$43.00</strong>
+
+            <span class="icon-cross">
+                <img src="{% static 'images/cross.svg'%}" class="img-fluid">
+            </span>
+        </a>
+    </div>  
     {% endfor %}
+</div>
+</div>
 </div>
 
 
